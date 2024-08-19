@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --lColor : #FFD1E3;
+    --lColor2: #A5D7E8;
+}
+
+*{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 32PX;
+    line-height: 150%;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(./img/v1016-b-09.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.logo{
+    padding-top: 10px;
+    margin: 10px;
+    width: 10%;
+}
+
+main{
+    display: flex;
+    margin-bottom: 50px;
+    margin-left: 300px;
+}
+
+
+.textarea{
+    border: none;
+    background:transparent ;
+    color: var(--lColor);/*da color al texto escrito*/
+
+    margin-top: 10px;
+    resize: none;
+}
+
+.textarea::placeholder{
+    color: var(--lColor2);
+}
+.textarea:focus{
+    outline: none;
+}
+
+.alerta{
+    color: #F1D3CE;
+    font-size: 18px;
+    margin-top: -15%;
+}
+
+.botones{
+    display: flex;
+    margin-top: 40px;
+
+}
+
+.desencriptar{
+    background: #d8dfe8;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    color: #0A3871;
+    cursor: pointer;
+    height: 67px;
+    width: 300px;
+    margin: 1%;
+}
+
+.encriptar{
+    background-color: #0A3871;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    color: white;
+    cursor: pointer;
+    height: 67px;
+    width: 300px;
+    margin: 1%;
+}
+
+.mensaje{
+    position: relative;
+    box-sizing: border-box;
+    top: 10px;
+    background-color: #535C91;
+    background-image: url(./img/gatito.png) ;
+    background-size: 95%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    border-radius: 24px;
+    color: var(--lColor);
+    margin-left: 98px;
+    margin-top: 20px;
+    padding-left: 20px;
+    position: fixed;
+    height: 90%;
+    width: 20.5%;
+    padding-top: 50px;
+    resize: none;
+}
+
+.mensaje::placeholder{
+    color: #A5D7E8;
+    text-align: center;
+    font-size: 25px;
+}
+
+.mensaje:focus{
+    outline: none;
+}
+
+.mensaje::after{
+    content: "Ningun mensaje fue encontrado";
+    display: block; /* Asegura que el texto se muestre en una nueva línea */
+    color: black;
+}
+
+
+.copiar{
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    color: #0A3871;
+    cursor: pointer;
+    height: 67px;
+    margin-left: 108px;
+    margin-top: 32%;
+    position: absolute;
+    width: 295px;
+}
+
+
+/* Pantallas de hasta 768px de ancho (tablets y móviles en orientación vertical) */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column; /* Cambia la dirección de los elementos a columna */
+        margin-left: 0; /* Ajusta el margen izquierdo */
+    }
+
+    .logo {
+        width: 20%; /* Aumenta el ancho del logo en pantallas pequeñas */
+    }
+
+    .mensaje {
+        width: 90%; /* Aumenta el ancho del mensaje para pantallas pequeñas */
+        margin-left: 0; /* Ajusta el margen izquierdo */
+        height: auto; /* Ajusta la altura del mensaje */
+        position: relative; /* Cambia la posición para que sea relativa */
+    }
+
+    .copiar {
+        width: 100%; /* Aumenta el ancho del botón copiar */
+        margin-left: 0; /* Ajusta el margen izquierdo */
+        margin-top: 10%; /* Ajusta el margen superior */
+        position: relative; /* Cambia la posición para que sea relativa */
+    }
+
+    .botones {
+        flex-direction: column; /* Cambia la dirección de los botones a columna */
+        align-items: center; /* Centra los botones horizontalmente */
+    }
+}
+
+/* Pantallas de hasta 480px de ancho (móviles en orientación vertical) */
+@media (max-width: 480px) {
+    .logo {
+        width: 30%; /* Ajusta aún más el tamaño del logo */
+    }
+
+    .textarea {
+        font-size: 24px; /* Reduce el tamaño de la fuente en pantallas muy pequeñas */
+        margin-top: 30px; /* Ajusta el margen superior */
+    }
+
+    .desencriptar, .encriptar {
+        width: 100%; /* Botones a tamaño completo */
+    }
+}
